@@ -50,4 +50,63 @@ driver.find_element(By.XPATH, "//a[@id='ap-other-signin-issues-link']")
 #search for Create your amazon account button
 driver.find_element(By.XPATH, "//a[@id='createAccountSubmit']")
 
+#========================================================
+
+#CSS Locators(Homework3)
+#click on Create your Amazon account
+
+driver.find_element(By.CSS_SELECTOR,"#createAccountSubmit").click()
+
+sleep(5)
+
+#I couldn't find (Amazon) image using CSS Selector so using XPATH
+driver.find_element(By.XPATH,"//i[@class='a-icon a-icon-logo']")
+
+#locating (Create Account)
+driver.find_element(By.CSS_SELECTOR,"h1.a-spacing-small")
+
+#locating customer name textbox
+driver.find_element(By.CSS_SELECTOR,"#ap_customer_name")
+
+#locating email id textbox
+driver.find_element(By.CSS_SELECTOR,"#ap_email")
+
+##locating password textbox
+driver.find_element(By.CSS_SELECTOR,"#ap_password")
+
+##locating alert for short password
+driver.find_element(By.CSS_SELECTOR,"#auth-password-invalid-password-alert")
+
+#locating re-enter password textbox
+driver.find_element(By.CSS_SELECTOR,"#ap_password_check")
+
+#locating Create your Amazon account button
+driver.find_element(By.CSS_SELECTOR,"input#continue.a-button-input")
+#==================
+#locating Condition of use link
+driver.find_element(By.CSS_SELECTOR,"a[href*='condition_of_use?']")
+
+#locating Privacy Notice link
+driver.find_element(By.CSS_SELECTOR,"a[href*='ap_register_notification_privacy_notice?']")
+
+#locating Sign in Link
+driver.find_element(By.CSS_SELECTOR,"a[href*='/ap/signin?openid.pape'].a-link-emphasis")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 driver.quit()
