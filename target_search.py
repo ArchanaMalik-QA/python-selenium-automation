@@ -30,5 +30,19 @@ print('Test case passed')
 
 # Verify an element present:
 driver.find_element(By.XPATH, "//*[text()='Sign into your Target account']")
+#====================================Testcase to check if cart is empty======================
+#Search for the cart icon
+driver.find_element(By.XPATH, "//div[@data-test='@web/CartIcon']").click()
+# Verification:
+expected_result = 'Your cart is empty'
+actual_result = driver.find_element(By.XPATH, "//h1[contains (text(),'Your cart is empty')]").text
+
+assert expected_result in actual_result, f'Expected text {expected_result} not in actual {actual_result}'
+print('Test case passed')
+
+# Verify an element present:
+driver.find_element(By.XPATH, "//*[text()='Your cart is empty']")
+
+
 
 
