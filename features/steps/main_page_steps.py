@@ -15,11 +15,14 @@ def search_product(context):
 
 @when('Add the product to cart')
 def add_the_product_to_cart(context):
-    context.driver.find_element(By.CSS_SELECTOR,"#addToCartButtonOrTextIdFor13010225[data-test='chooseOptionsButton']").click()
+    context.driver.find_elements(By.CSS_SELECTOR,"[id*='addToCartButtonOrTextId'][data-test='chooseOptionsButton'][aria-label*='Add to cart']")[0].click()
     sleep(10)
-    context.driver.find_element(By.CSS_SELECTOR,"#addToCartButtonOrTextIdFor13010225[data-test='orderPickupButton']").click()
+
+@when('Confirm Add to cart button from side navigation')
+def confirm_add_to_cart_from_side_navigation(context):
+    context.driver.find_element(By.CSS_SELECTOR,"[data-test='fulfillment-cell-shipping']").click()
     sleep(10)
-    context.driver.find_element(By.CSS_SELECTOR,"[data-test='modal-drawer-previous-button']").click()
+    context.driver.find_element(By.CSS_SELECTOR,"[data-test='shippingButton']").click()
     context.driver.find_element(By.CSS_SELECTOR,"[aria-label='close']").click()
     sleep(5)
 
@@ -29,10 +32,6 @@ def search_product(context, product):
     context.driver.find_element(By.XPATH, "//button[@data-test='@web/Search/SearchButton']").click()
     sleep(5)
 
-
-@when('Click on Cart icon')
-def click_cart(context):
-    context.driver.find_element(By.CSS_SELECTOR, "[data-test='@web/CartLink']").click()
 
 
 @then('Verify at least 1 header link is shown')

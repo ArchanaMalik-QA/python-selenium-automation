@@ -10,7 +10,8 @@ Feature: Tests for cart functionality
     Given Open target main page
     When Search for tea
     When Add the product to cart
+    And Confirm Add to cart button from side navigation
     And Click on Cart icon
-    Then Verify 'Your cart is having added items' message is shown
+    Then Verify cart has 1 item(s)
 
 
