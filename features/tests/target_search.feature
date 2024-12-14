@@ -15,7 +15,7 @@ Feature: Tests for search
   Scenario: User can search for a mug
     Given Open target main page
     When Search for a mug
-    Then Verify search results shown for a mug
+    Then Verify search results shown for mug
 
   Scenario Outline: User can search for a product
     Given Open target main page
