@@ -2,9 +2,6 @@ from selenium.webdriver.common.by import By
 from behave import given, when, then
 
 
-CART_IS_EMPTY = (By.XPATH, "//h1[contains (text(),'Your cart is empty')]")
-
-
 @when('Open cart page')
 def open_cart(context):
     context.driver.get('https://www.target.com/cart')
@@ -23,10 +20,6 @@ def verify_product_name(context):
     print(f'Product name stored earlier: {context.product_name}')
     assert context.product_name in actual_name, f"Expected {context.product_name} but got {actual_name}"
 
-
-@then("Verify 'Your cart is empty ' message is shown")
-def verify_cart_is_empty(context):
-    expected_result = 'Your cart is empty'
-    actual_result = context.driver.find_element(*CART_IS_EMPTY).text
-    assert expected_result in actual_result, f'Expected text {expected_result} not in actual {actual_result}'
-
+@then("Verify 'Your cart is empty' message is shown")
+def verify_cart_empty(context):
+    context.app.cart_page.verify_cart_empty()
