@@ -20,6 +20,6 @@ def verify_product_name(context):
     print(f'Product name stored earlier: {context.product_name}')
     assert context.product_name in actual_name, f"Expected {context.product_name} but got {actual_name}"
 
-@then("Verify 'Your cart is empty' message is shown")
+@then("Verify 'Your cart is empty ' message is shown")
 def verify_cart_empty(context):
     context.app.cart_page.verify_cart_empty()
