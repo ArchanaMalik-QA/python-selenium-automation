@@ -3,8 +3,12 @@ from behave import given, then
 from time import sleep
 
 
-COLOR_OPTIONS = (By.CSS_SELECTOR, "div[aria-label='Carousel'] li img")
-SELECTED_COLOR = (By.CSS_SELECTOR, "[data-test='@web/VariationComponent'] div")
+COLOR_OPTIONS = (By.CSS_SELECTOR, "[aria-label='Carousel'] ul a img")
+SELECTED_COLOR = (By.CSS_SELECTOR, " div div div [data-test='@web/VariationComponent']:nth-of-type(2)" )
+
+#“[aria-label=‘Carousel’] ul a img”
+# "//*@aria-label='Carousel’]//a[.//img]"
+
 
 
 @given('Open target product {product_id} page')
@@ -15,7 +19,7 @@ def open_target(context, product_id):
 
 @then('Verify user can click through colors')
 def click_and_verify_colors(context):
-    expected_colors = ['Black', 'Light Red', 'Light Taupe', 'Steel Blue']
+    expected_colors = ['grey', 'navy/tan', 'white/sand/tan', 'white/navy/red - Out of Stock']
     actual_colors = []
 
     colors = context.driver.find_elements(*COLOR_OPTIONS)  # [webelement1, webelement2, webelement3]
