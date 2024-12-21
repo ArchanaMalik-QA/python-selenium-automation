@@ -7,6 +7,7 @@ from time import sleep
 def open_main(context):
     context.app.main_page.open_main()
 
+
 @when('Search for {product}')
 def search_product(context, product):
     context.app.header.search_product(product)
@@ -40,3 +41,5 @@ def verify_header_links_amount(context, expected_amount):
     print(type(len(links)))
 
     assert len(links) == int(expected_amount), f'Expected {expected_amount} links but got {len(links)}'
+
+

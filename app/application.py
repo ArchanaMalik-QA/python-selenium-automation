@@ -2,6 +2,8 @@ from pages.base_page import BasePage
 from pages.cart_page import CartPage
 from pages.header import Header
 from pages.main_page import MainPage
+from pages.signin_page import SigninPage
+
 from pages.search_results_page import SearchResultsPage
 
 
@@ -14,4 +16,5 @@ class Application:
         self.cart_page = CartPage(driver)
         self.header = Header(driver)
         self.main_page = MainPage(driver)
+        self.signin_page = SigninPage(driver)
         self.search_results_page = SearchResultsPage(driver)
