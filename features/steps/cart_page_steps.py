@@ -15,10 +15,7 @@ def verify_cart_items(context, amount):
 
 @then('Verify cart has correct product')
 def verify_product_name(context):
-    actual_name = context.driver.find_element(By.CSS_SELECTOR, "[data-test='cartItem-title']").text
-    print(f'Actual product in cart name: {actual_name}')
-    print(f'Product name stored earlier: {context.product_name}')
-    assert context.product_name in actual_name, f"Expected {context.product_name} but got {actual_name}"
+    context.app.cart_page.verify_product_name(context.product_name)
 
 @then("Verify 'Your cart is empty ' message is shown")
 def verify_cart_empty(context):

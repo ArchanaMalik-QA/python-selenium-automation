@@ -31,7 +31,7 @@ def click_add_to_cart(context):
 
 @when('Store product name')
 def store_product_name(context):
-    context.product_name = context.driver.find_element(*PRODUCT_NAME).text
+    context.product_name = context.app.search_results_page.get_product_name()
     print(f'Product stored: {context.product_name}')
 
 

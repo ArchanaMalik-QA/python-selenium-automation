@@ -4,9 +4,9 @@ Feature: Tests for search
 
    Scenario: User can search for tea
     Given Open target main page
-    When Search for tea
-    Then Verify search results shown for tea
-    Then Verify search term tea in URL
+    When Search for Coca Cola
+    Then Verify search results shown for Coca Cola
+    Then Verify search term Coca+Cola in URL
 
   Scenario: User can search for coffee
     Given Open target main page
