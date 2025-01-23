@@ -1,6 +1,7 @@
 # Created by archanamalik at 12/9/24
 Feature: Tests for Main page UI
 
+  @smoke
   Scenario: Verify that logged out user can access Sign In
     Given Open target main page
     When Click on Signin icon

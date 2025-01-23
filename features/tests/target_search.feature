@@ -7,7 +7,7 @@ Feature: Tests for search
     When Search for Coca Cola
     Then Verify search results shown for Coca Cola
     Then Verify search term Coca+Cola in URL
-
+  @smoke
   Scenario: User can search for coffee
     Given Open target main page
     When Search for coffee
